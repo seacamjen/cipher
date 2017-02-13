@@ -1,5 +1,7 @@
+$(document).ready(function() {
+
 var userResponse = prompt("Please enter a sentence. Do not use punctuation!?...");
-alert(userResponse);
+// alert(userResponse);
 var capFirst = function() {
   return userResponse.charAt(0).toUpperCase();
 };
@@ -9,17 +11,17 @@ var capLast = function() {
 var capFirstLast = function() {
   return capFirst() + capLast();
 };
-alert(capFirstLast());
+// alert(capFirstLast());
 
 var capLastFirst = function() {
   return capLast() + capFirst();
 };
-alert(capLastFirst());
+// alert(capLastFirst());
 
 var sentenceLF = function () {
   return userResponse.concat(capLastFirst());
 };
-alert(sentenceLF());
+// alert(sentenceLF());
 
 var middleNumber = function () {
   return parseInt(userResponse.length/2);
@@ -32,9 +34,18 @@ var middleLetter = function () {
 var aSentenceLF = function() {
   return middleLetter() + sentenceLF();
 };
-alert(aSentenceLF());
+// alert(aSentenceLF());
 
 var finalFlip = function(){
   return aSentenceLF().split("").reverse().join("");
 };
-alert(finalFlip());
+// alert(finalFlip());
+
+$(".original").click(function() {
+  alert(userResponse);
+});
+$(".jumble").click(function() {
+  alert(finalFlip());
+});
+
+});
